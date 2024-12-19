@@ -6,7 +6,7 @@ const DefaultLayout = ({ children }) => {
   return (
     <div className="page-container">
       <Nav />
-      {children}
+      <div className="item_container mt-[4rem]">{children}</div>
       <Footer />
     </div>
   );
