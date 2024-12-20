@@ -31,20 +31,20 @@ const Home = () => {
 
   return (
     <DefaultLayout>
-      <div className="page_container min-h-screen mt-9">
-        <section className="hero h-[29rem] !bg-green-900/15 py-[2rem] gap-4 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
+      <div className="page_container min-h-screen">
+        <section className="hero h-[29rem] md:pt-[5rem] pt-[4rem] !bg-green-900/15 py-[2rem] gap-4 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
           <div className="text_container md:w-[50%] w-full">
             <h1 className="serif-regular md:w-[90%] w-full text-green-950 md:text-[2.75rem] text-[2rem]">
               Delivering Impactful Write Ups
             </h1>
             <h2 className="text-gray-500">Where Stories Come To Life</h2>
-            <button className="bg-green-900 shadow-lg mt-4 serif-regular text-white h-[2.5rem] w-[10rem] rounded-full">
+            <button className="bg-green-900 shadow-lg mt-4 serif-regular text-white h-[2.5rem] w-[13rem] rounded-full">
               Book
             </button>
           </div>
 
           <div className="image_container bg-transparent md:w-[50%] w-full block rounded-[8px] h-[29rem]">
-            <Slider {...settings} className="bg-red-800 h-full">
+            <Slider {...settings} className="h-full">
               {images.map((image, index) => (
                 <img
                   src={image.name}
