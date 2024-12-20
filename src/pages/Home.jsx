@@ -32,7 +32,7 @@ const Home = () => {
   return (
     <DefaultLayout>
       <div className="page_container min-h-screen">
-        <section className="hero h-[29rem] md:pt-[5rem] pt-[4rem] !bg-green-900/15 py-[2rem] gap-4 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
+        <section className="hero h-[29rem] pt-[5.5rem] !bg-green-900/15 py-[2rem] gap-4 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
           <div className="text_container md:w-[50%] w-full">
             <h1 className="serif-regular md:w-[90%] w-full text-green-950 md:text-[2.75rem] text-[2rem]">
               Delivering Impactful Write Ups
