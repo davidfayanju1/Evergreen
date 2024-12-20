@@ -55,7 +55,30 @@ const Home = () => {
             </Slider>
           </div>
         </section>
-        <section className="about min-h-[30rem] w-full bg-gray-200"></section>
+        <section className="about px-[1rem] py-[2rem] min-h-[30rem] w-full bg-white">
+          <div className="text_section">
+            <span className="title block serif-regular text-green-950 font-bold text-center md:text-[2rem] text-[1.4rem]">
+              About Us
+            </span>
+
+            <small className="desc block text-gray-500 mt-[1rem]">
+              Evergreen is a one woman business that thrived when everything
+              I've tried failed. Evergreen is my blood sweat and tears when I
+              had nothing. Every poem stood for something so did every write up
+              so I said to give back to the community by also giving back to
+              myself LoL.
+            </small>
+
+            <div className="text-container mt-3">
+              <small className="block text-green-950 text-[.7rem]">
+                - Famoofo Oluwaseun
+              </small>
+              <small className="block text-gray-500 font-semibold text-[.7rem]">
+                CEO, Evergreen
+              </small>
+            </div>
+          </div>
+        </section>
         <section className="projects_number min-h-[20rem] bg-green-900"></section>
         <section className="testimonials min-h-[35rem] bg-green-300"></section>
       </div>
