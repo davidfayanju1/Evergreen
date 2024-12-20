@@ -32,9 +32,9 @@ const Home = () => {
   return (
     <DefaultLayout>
       <div className="page_container min-h-screen mt-9">
-        <section className="hero h-[29rem] !bg-green-900 py-[2rem] gap-4 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
+        <section className="hero h-[29rem] !bg-green-900/15 py-[2rem] gap-4 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
           <div className="text_container md:w-[50%] w-full">
-            <h1 className="serif-regular text-green-950 md:text-[2.5rem] text-[2rem]">
+            <h1 className="serif-regular md:w-[90%] w-full text-green-950 md:text-[2.75rem] text-[2rem]">
               Delivering Impactful Write Ups
             </h1>
             <h2 className="text-gray-500">Where Stories Come To Life</h2>
@@ -43,10 +43,10 @@ const Home = () => {
             </button>
           </div>
 
-          <div className="image_container bg-black/70 md:w-[50%] w-full block rounded-[8px] h-full">
+          <div className="image_container bg-transparent md:w-[50%] w-full block rounded-[8px] h-full">
             <Slider {...settings}>
               {images.map((image, index) => (
-                <div key={index} className="bg-red-800 h-full">
+                <div key={index} className="h-full">
                   <img
                     src={image.name}
                     alt={image.alt}
