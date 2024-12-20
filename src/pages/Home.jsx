@@ -19,13 +19,13 @@ const Home = () => {
 
   const images = [
     {
-      name: "/images/book1.jpg",
+      name: "/images/typewriter.jpg",
     },
     {
-      name: "/images/book2.png",
+      name: "/images/letter.jpg",
     },
     {
-      name: "/images/book3.png",
+      name: "/images/newspaper.jpg",
     },
   ];
 
@@ -43,16 +43,14 @@ const Home = () => {
             </button>
           </div>
 
-          <div className="image_container bg-transparent md:w-[50%] w-full block rounded-[8px] h-full">
-            <Slider {...settings}>
+          <div className="image_container bg-transparent md:w-[50%] w-full block rounded-[8px] h-[29rem]">
+            <Slider {...settings} className="bg-red-800 h-full">
               {images.map((image, index) => (
-                <div key={index} className="h-full">
-                  <img
-                    src={image.name}
-                    alt={image.alt}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
+                <img
+                  src={image.name}
+                  alt={image.alt}
+                  className="h-full w-full object-cover"
+                />
               ))}
             </Slider>
           </div>
