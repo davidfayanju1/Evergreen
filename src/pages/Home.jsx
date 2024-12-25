@@ -40,7 +40,7 @@ const Home = () => {
       name: "Novels",
     },
     {
-      name: "Speechless",
+      name: "Speeches",
     },
     {
       name: "Curriculum Vitae",
@@ -155,7 +155,7 @@ const Home = () => {
             <div className="services-container md:w-[50%] w-full">
               {services.map((item) => (
                 <div className="card-container mb-5 flex">
-                  <div className="image-container h-[5rem] relative z-20 w-[5rem] rounded-[10px] bg-green-950 flex items-center justify-center">
+                  <div className="image-container h-[5rem] relative z-20 w-[5rem] rounded-[10px] bg-[#013220CC] flex items-center justify-center">
                     <TbPencilStar size={30} color="white" />
                   </div>
 
@@ -172,7 +172,12 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <section className="testimonials min-h-[35rem] bg-green-300"></section>
+
+        <section className="testimonials min-h-[35rem] bg-white md:px-[4rem] px-[1rem] py-[4rem]">
+          <h2 className="serif-regular text-center md:text-[2rem] text-[1.4rem] text-green-950">
+            Feedback
+          </h2>
+        </section>
       </div>
     </DefaultLayout>
   );
