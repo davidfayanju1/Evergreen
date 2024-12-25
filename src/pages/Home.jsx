@@ -53,7 +53,7 @@ const Home = () => {
   return (
     <DefaultLayout>
       <div className="page_container min-h-screen">
-        <section className="hero md:h-[29rem] h-[37rem] pt-[5.5rem] !bg-green-100/50 py-[2rem] md:gap-4 gap-8 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
+        <section className="hero md:h-[32rem] h-[37rem] pt-[6.5rem] !bg-green-100/50 py-[2rem] md:gap-4 gap-8 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
           <div className="text_container md:w-[50%] w-full">
             <h1 className="serif-regular md:w-[90%] w-full text-green-950 md:text-[2.55rem] text-[1.9rem]">
               Delivering Impactful
@@ -90,7 +90,7 @@ const Home = () => {
             INDIVIDUALS AND PROFESSIONALS
           </h1>
         </div>
-        <section className="about md:px-[4rem] px-[1rem] bg-white py-[4rem] min-h-[30rem] w-full flex items-center justify-center md:flex-row flex-col md:gap-4 gap-[4rem]">
+        <section className="about md:px-[4rem] px-[1rem] bg-white py-[4rem] min-h-[30rem] w-full flex items-center justify-center md:flex-row-reverse flex-col md:gap-[3rem] gap-[4rem]">
           <div className="text_section md:w-[50%] w-full">
             <span className="title block serif-regular text-green-950 font-bold md:text-[2rem] text-[1.4rem]">
               About Us
