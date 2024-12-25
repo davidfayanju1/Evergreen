@@ -32,17 +32,17 @@ const Home = () => {
   return (
     <DefaultLayout>
       <div className="page_container min-h-screen">
-        <section className="hero md:h-[29rem] h-[35rem] pt-[5.5rem] !bg-green-50 py-[2rem] gap-4 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
+        <section className="hero md:h-[29rem] h-[43rem] pt-[5.5rem] !bg-green-50 py-[2rem] md:gap-4 gap-8 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
           <div className="text_container md:w-[50%] w-full">
             <h1 className="serif-regular md:w-[90%] w-full text-green-primary md:text-[2.55rem] text-[2rem]">
               Delivering Impactful Write Ups
             </h1>
-            <h2 className="text-gray-500 text-[.9rem] md:w-[80%] w-full">
+            <h2 className="text-gray-500 md:text-[.9rem] text-[.8rem] md:w-[80%] w-full my-3">
               Delivering writeups that resonate and inspire. We craft content
               designed to leave a lasting impact and drive meaningful
               engagement.
             </h2>
-            <button className="bg-red-900 shadow-lg mt-6 serif-regular text-white h-[2.5rem] w-[13rem] rounded-full">
+            <button className="bg-red-900 shadow-lg md:mt-6 mt-3 serif-regular text-white h-[2.5rem] w-[13rem] rounded-full">
               Book
             </button>
           </div>
