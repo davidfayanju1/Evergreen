@@ -32,13 +32,17 @@ const Home = () => {
   return (
     <DefaultLayout>
       <div className="page_container min-h-screen">
-        <section className="hero h-[29rem] pt-[5.5rem] !bg-green-900/15 py-[2rem] gap-4 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
+        <section className="hero h-[29rem] pt-[5.5rem] !bg-green-50 py-[2rem] gap-4 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
           <div className="text_container md:w-[50%] w-full">
-            <h1 className="serif-regular md:w-[90%] w-full text-green-950 md:text-[2.75rem] text-[2rem]">
+            <h1 className="serif-regular md:w-[90%] w-full text-green-primary md:text-[2.55rem] text-[2rem]">
               Delivering Impactful Write Ups
             </h1>
-            <h2 className="text-gray-500">Where Stories Come To Life</h2>
-            <button className="bg-green-900 shadow-lg mt-4 serif-regular text-white h-[2.5rem] w-[13rem] rounded-full">
+            <h2 className="text-gray-500 text-[.9rem] md:w-[80%] w-full">
+              Delivering writeups that resonate and inspire. We craft content
+              designed to leave a lasting impact and drive meaningful
+              engagement.
+            </h2>
+            <button className="bg-red-900 shadow-lg mt-6 serif-regular text-white h-[2.5rem] w-[13rem] rounded-full">
               Book
             </button>
           </div>
@@ -55,7 +59,14 @@ const Home = () => {
             </Slider>
           </div>
         </section>
-        <section className="about px-[1rem] py-[2rem] min-h-[30rem] w-full bg-white">
+
+        <div className="partners-section mt-[2rem]">
+          <h1 className="text-center font-semibold text-[.9rem]">
+            TRUSTED BY <span className="text-red-900"> 50+ </span>
+            INDIVIDUALS AND PROFESSIONALS
+          </h1>
+        </div>
+        <section className="about bg-white px-[1rem] py-[4rem] min-h-[30rem] w-full ">
           <div className="text_section">
             <span className="title block serif-regular text-green-950 font-bold text-center md:text-[2rem] text-[1.4rem]">
               About Us
