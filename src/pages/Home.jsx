@@ -68,13 +68,13 @@ const Home = () => {
             INDIVIDUALS AND PROFESSIONALS
           </h1>
         </div>
-        <section className="about bg-white px-[1rem] py-[4rem] min-h-[30rem] w-full ">
-          <div className="text_section">
-            <span className="title block serif-regular text-green-950 font-bold text-center md:text-[2rem] text-[1.4rem]">
+        <section className="about md:px-[4rem] px-[1rem] bg-white py-[4rem] min-h-[30rem] w-full flex items-center justify-center md:flex-row flex-col gap-4">
+          <div className="text_section md:w-[50%] w-full">
+            <span className="title block serif-regular text-green-950 font-bold md:text-[2rem] text-[1.4rem]">
               About Us
             </span>
 
-            <small className="desc block text-gray-500 mt-[1rem]">
+            <small className="desc block text-gray-500 mt-[1rem] md:w-[80%] w-full">
               Evergreen is a one woman business that thrived when everything
               I've tried failed. Evergreen is my blood sweat and tears when I
               had nothing. Every poem stood for something so did every write up
@@ -90,6 +90,14 @@ const Home = () => {
                 CEO, Evergreen
               </small>
             </div>
+          </div>
+
+          <div className="image-container md:w-[50%] w-full rounded-[7px] bg-gray-100 h-[20rem]">
+            <img
+              src="/images/phones.jpg"
+              alt=""
+              className="rounded-[6px] h-full w-full object-cover"
+            />
           </div>
         </section>
         <section className="projects_number min-h-[20rem] bg-green-900"></section>
