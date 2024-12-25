@@ -21,7 +21,7 @@ const Nav = () => {
   ];
 
   return (
-    <div className="nav-container z-50 bg-white/50 backdrop-blur-lg fixed top-0 w-full h-[4rem] flex items-center justify-between md:px-[4rem] px-[1rem] shadow-md">
+    <div className="nav-container z-50 bg-white backdrop-blur-lg fixed top-0 w-full h-[4rem] flex items-center justify-between md:px-[4rem] px-[1rem] shadow-md">
       <div className="page_title">
         <Link to={"/"} className="flex items-center gap-1">
           <h1 className="serif-regular text-green-950 font-bold md:text-[1.3rem] text-[1.1rem]">
