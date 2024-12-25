@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { TbPencilStar } from "react-icons/tb";
 
 import Slider from "react-slick";
 
@@ -28,6 +29,24 @@ const Home = () => {
     },
     {
       name: "/images/newspaper.jpg",
+    },
+  ];
+
+  const services = [
+    {
+      name: "Articles",
+    },
+    {
+      name: "Novels",
+    },
+    {
+      name: "Speechless",
+    },
+    {
+      name: "Curriculum Vitae",
+    },
+    {
+      name: "Journalist Pieces",
     },
   ];
 
@@ -114,12 +133,44 @@ const Home = () => {
             />
           </div>
         </section>
-        <section className="services_number min-h-[20rem] bg-red-50 md:px-[4rem] px-[1rem] py-[2rem]">
-          <h2 className="serif-regular md:text-[2rem] text-[1.4rem] text-green-950">
+        <section className="services_number min-h-[20rem] bg-red-50 md:px-[4rem] px-[1rem] py-[4rem]">
+          <h2 className="serif-regular text-center md:text-[2rem] text-[1.4rem] text-green-950">
             Services We Offer
           </h2>
 
-          <div className="services-container bg-gray-50 mt-5 rounded-[6px] h-[10rem]"></div>
+          <small className="text-gray-500 text-center md:mt-5 mt-2 md:mb-[4rem] mb-[2rem] block">
+            We craft words that captivates, connect, and convert
+          </small>
+
+          <div className="flex items-start justify-between gap-9 md:flex-row flex-col">
+            <div className="image-container h-full bg-red-800 relative rounded-[8px] oveflow-hidden md:w-[50%] w-full">
+              <div className="absolute inset-0 h-full w-full bg-[#800020B2]/30 rounded-[8px]"></div>
+              <img
+                src="/images/services.png"
+                alt=""
+                className="rounded-[8px] object-cover md:h-[35rem] h-[20rem] w-full"
+              />
+            </div>
+
+            <div className="services-container md:w-[50%] w-full">
+              {services.map((item) => (
+                <div className="card-container mb-5 flex">
+                  <div className="image-container h-[5rem] relative z-20 w-[5rem] rounded-[10px] bg-green-950 flex items-center justify-center">
+                    <TbPencilStar size={30} color="white" />
+                  </div>
+
+                  <div className="text-container ml-[-1rem] relative z-10 px-[2rem] rounded-tr-md rounded-br-md flex items-center py-1 md:w-[20rem] w-full bg-red-100/50 h-[5rem]">
+                    <span className="">{item.name}</span>
+                  </div>
+                </div>
+              ))}
+
+              <div className="view-more flex items-center gap-3">
+                <span className="block">View More</span>
+                <img src="/icons/arrow.svg" alt="" />
+              </div>
+            </div>
+          </div>
         </section>
         <section className="testimonials min-h-[35rem] bg-green-300"></section>
       </div>
