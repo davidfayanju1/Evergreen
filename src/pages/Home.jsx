@@ -53,7 +53,7 @@ const Home = () => {
   return (
     <DefaultLayout>
       <div className="page_container min-h-screen">
-        <section className="hero md:h-[29rem] h-[37rem] pt-[5.5rem] !bg-white py-[2rem] md:gap-4 gap-8 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
+        <section className="hero md:h-[29rem] h-[37rem] pt-[5.5rem] !bg-green-100/50 py-[2rem] md:gap-4 gap-8 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
           <div className="text_container md:w-[50%] w-full">
             <h1 className="serif-regular md:w-[90%] w-full text-green-950 md:text-[2.55rem] text-[1.9rem]">
               Delivering Impactful

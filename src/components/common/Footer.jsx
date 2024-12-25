@@ -6,6 +6,10 @@ const Footer = () => {
       <div className="title">
         <img src="/icons/Logo.svg" alt="" />
       </div>
+
+      <div className="links-container">
+        <h2 className="font-semibold"></h2>
+      </div>
     </footer>
   );
 };
