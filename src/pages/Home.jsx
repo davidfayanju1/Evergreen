@@ -2,6 +2,8 @@ import React from "react";
 import DefaultLayout from "../layout/DefaultLayout";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { FaLinkedinIn } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 import Slider from "react-slick";
 
@@ -94,7 +96,17 @@ const Home = () => {
           </div>
 
           <div className="image-container md:w-[50%] w-full relative rounded-[6px] overflow-hidden bg-gray-100 h-[20rem]">
-            <div className="absolute inset-0 h-full w-full bg-black/20 rounded[6px]"></div>
+            <div className="absolute inset-0 h-full w-full bg-black/20 rounded[6px] flex items-center justify-center">
+              <Link
+                to={"https://www.linkedin.com/in/oluwaseun-famoofo-324151178/"}
+              >
+                <FaLinkedinIn
+                  size={70}
+                  color="#F9F9F9F9"
+                  className="opacity-60"
+                />
+              </Link>
+            </div>
             <img
               src="/images/phones.jpg"
               alt=""
