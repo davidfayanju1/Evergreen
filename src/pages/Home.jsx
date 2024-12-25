@@ -32,10 +32,11 @@ const Home = () => {
   return (
     <DefaultLayout>
       <div className="page_container min-h-screen">
-        <section className="hero md:h-[29rem] h-[37rem] pt-[5.5rem] !bg-green-50 py-[2rem] md:gap-4 gap-8 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
+        <section className="hero md:h-[29rem] h-[37rem] pt-[5.5rem] !bg-white py-[2rem] md:gap-4 gap-8 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
           <div className="text_container md:w-[50%] w-full">
             <h1 className="serif-regular md:w-[90%] w-full text-green-950 md:text-[2.55rem] text-[1.9rem]">
-              Delivering Impactful Write Ups
+              Delivering Impactful
+              <span className="text-red-900"> Write Ups.</span>
             </h1>
             <h2 className="text-gray-500 md:text-[.9rem] text-[.8rem] md:w-[80%] w-full my-3">
               Delivering writeups that resonate and inspire. We craft content
