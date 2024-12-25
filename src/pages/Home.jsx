@@ -34,7 +34,7 @@ const Home = () => {
       <div className="page_container min-h-screen">
         <section className="hero md:h-[29rem] h-[37rem] pt-[5.5rem] !bg-green-50 py-[2rem] md:gap-4 gap-8 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
           <div className="text_container md:w-[50%] w-full">
-            <h1 className="serif-regular md:w-[90%] w-full text-green-primary md:text-[2.55rem] text-[1.9rem]">
+            <h1 className="serif-regular md:w-[90%] w-full text-green-950 md:text-[2.55rem] text-[1.9rem]">
               Delivering Impactful Write Ups
             </h1>
             <h2 className="text-gray-500 md:text-[.9rem] text-[.8rem] md:w-[80%] w-full my-3">
@@ -68,7 +68,7 @@ const Home = () => {
             INDIVIDUALS AND PROFESSIONALS
           </h1>
         </div>
-        <section className="about md:px-[4rem] px-[1rem] bg-white py-[4rem] min-h-[30rem] w-full flex items-center justify-center md:flex-row flex-col gap-4">
+        <section className="about md:px-[4rem] px-[1rem] bg-white py-[4rem] min-h-[30rem] w-full flex items-center justify-center md:flex-row flex-col md:gap-4 gap-[4rem]">
           <div className="text_section md:w-[50%] w-full">
             <span className="title block serif-regular text-green-950 font-bold md:text-[2rem] text-[1.4rem]">
               About Us
@@ -92,7 +92,8 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="image-container md:w-[50%] w-full rounded-[7px] bg-gray-100 h-[20rem]">
+          <div className="image-container md:w-[50%] w-full relative rounded-[6px] overflow-hidden bg-gray-100 h-[20rem]">
+            <div className="absolute inset-0 h-full w-full bg-black/20 rounded[6px]"></div>
             <img
               src="/images/phones.jpg"
               alt=""
@@ -100,7 +101,13 @@ const Home = () => {
             />
           </div>
         </section>
-        <section className="projects_number min-h-[20rem] bg-green-900"></section>
+        <section className="services_number min-h-[20rem] bg-red-50 md:px-[4rem] px-[1rem] py-[2rem]">
+          <h2 className="serif-regular md:text-[2rem] text-[1.4rem] text-green-950">
+            Services We Offer
+          </h2>
+
+          <div className="services-container bg-gray-50 mt-5 rounded-[6px] h-[10rem]"></div>
+        </section>
         <section className="testimonials min-h-[35rem] bg-green-300"></section>
       </div>
     </DefaultLayout>
