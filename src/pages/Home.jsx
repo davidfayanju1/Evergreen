@@ -32,7 +32,7 @@ const Home = () => {
   return (
     <DefaultLayout>
       <div className="page_container min-h-screen">
-        <section className="hero h-[29rem] pt-[5.5rem] !bg-green-50 py-[2rem] gap-4 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
+        <section className="hero md:h-[29rem] h-[35rem] pt-[5.5rem] !bg-green-50 py-[2rem] gap-4 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
           <div className="text_container md:w-[50%] w-full">
             <h1 className="serif-regular md:w-[90%] w-full text-green-primary md:text-[2.55rem] text-[2rem]">
               Delivering Impactful Write Ups
@@ -47,8 +47,8 @@ const Home = () => {
             </button>
           </div>
 
-          <div className="image_container bg-transparent md:w-[50%] w-full block rounded-[8px] h-[29rem]">
-            <Slider {...settings} className="h-full">
+          <div className="image_container md:w-[50%] w-full block rounded-[8px] h-[29rem]">
+            <Slider {...settings} className="h-[29rem]">
               {images.map((image, index) => (
                 <img
                   src={image.name}
@@ -61,7 +61,7 @@ const Home = () => {
         </section>
 
         <div className="partners-section mt-[2rem]">
-          <h1 className="text-center font-semibold text-[.9rem]">
+          <h1 className="text-center font-semibold md:text-[.9rem] text-[.7rem]">
             TRUSTED BY <span className="text-red-900"> 50+ </span>
             INDIVIDUALS AND PROFESSIONALS
           </h1>
