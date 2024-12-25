@@ -32,9 +32,9 @@ const Home = () => {
   return (
     <DefaultLayout>
       <div className="page_container min-h-screen">
-        <section className="hero md:h-[29rem] h-[43rem] pt-[5.5rem] !bg-green-50 py-[2rem] md:gap-4 gap-8 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
+        <section className="hero md:h-[29rem] h-[37rem] pt-[5.5rem] !bg-green-50 py-[2rem] md:gap-4 gap-8 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
           <div className="text_container md:w-[50%] w-full">
-            <h1 className="serif-regular md:w-[90%] w-full text-green-primary md:text-[2.55rem] text-[2rem]">
+            <h1 className="serif-regular md:w-[90%] w-full text-green-primary md:text-[2.55rem] text-[1.9rem]">
               Delivering Impactful Write Ups
             </h1>
             <h2 className="text-gray-500 md:text-[.9rem] text-[.8rem] md:w-[80%] w-full my-3">
@@ -48,13 +48,15 @@ const Home = () => {
           </div>
 
           <div className="image_container md:w-[50%] w-full block rounded-[8px] h-[29rem]">
-            <Slider {...settings} className="h-[29rem]">
+            <Slider {...settings} className="">
               {images.map((image, index) => (
-                <img
-                  src={image.name}
-                  alt={image.alt}
-                  className="h-full w-full object-cover"
-                />
+                <div className="image-container h-[29rem]">
+                  <img
+                    src={image.name}
+                    alt={image.alt}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
               ))}
             </Slider>
           </div>
