@@ -174,9 +174,46 @@ const Home = () => {
         </section>
 
         <section className="testimonials min-h-[35rem] bg-white md:px-[4rem] px-[1rem] py-[4rem]">
-          <h2 className="serif-regular text-center md:text-[2rem] text-[1.4rem] text-green-950">
+          <h2 className="serif-regular text-center md:text-[2rem] text-[1.4rem] text-green-950 mb-[1rem]">
             Feedback
           </h2>
+
+          <small className="block text-gray-500 text-center">
+            Read what our clients have said about our brand
+          </small>
+        </section>
+
+        <section className="reach-out mb-8">
+          <div className="item-card w-[90%] bg-[#D9D9D9] md:px-[4rem] px-[1rem] py-[3rem] rounded-[9px] min-h-[20rem] mx-auto">
+            <h2 className="serif-regular text-center md:text-[2rem] text-[1.4rem] text-green-950 mb-[.9rem]">
+              We are here for you
+            </h2>
+            <small className="block text-gray-500 text-center mb-[3rem]">
+              Reach out to us for a compelling writeup
+            </small>
+
+            <input
+              type="text"
+              className=" w-full px-3 py-2 outline-none mb-[1rem] border-none rounded-[9px] placeholder:text-[14px] bg-green-100/30"
+              placeholder="Enter Email Address"
+            />
+
+            <select
+              name=""
+              id=""
+              className="outline-none w-full px-3 py-2 rounded-[9px] bg-green-100/30"
+            >
+              {services.map((item) => (
+                <option value="" className="text-[1rem]">
+                  {item.name}
+                </option>
+              ))}
+            </select>
+
+            <button className="bg-red-900 md:mt-6 mt-[2rem] serif-regular text-white h-[2.5rem] md:w-[13rem] w-full rounded-[9px]">
+              Send
+            </button>
+          </div>
         </section>
       </div>
     </DefaultLayout>
