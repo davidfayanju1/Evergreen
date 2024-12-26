@@ -50,6 +50,30 @@ const Home = () => {
     {
       name: "Journalist Pieces",
     },
+
+    {
+      name: "Autobiographies/biographies",
+    },
+
+    {
+      name: "Novels",
+    },
+
+    {
+      name: "CVs",
+    },
+
+    {
+      name: "Cover letters",
+    },
+
+    {
+      name: "Personal Statements",
+    },
+
+    {
+      name: "Essays",
+    },
   ];
 
   const testimonials = [
@@ -74,7 +98,7 @@ const Home = () => {
     <DefaultLayout>
       <div className="page_container min-h-screen">
         <FadeLayout delay={0.4}>
-          <section className="hero md:h-[32rem] h-[37rem] pt-[6.5rem] !bg-green-100/50 py-[2rem] md:gap-4 gap-8 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
+          <section className="hero md:h-[32rem] h-[37rem] pt-[6.5rem] !bg-green-200/50 py-[2rem] md:gap-4 gap-8 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
             <div className="text_container md:w-[50%] w-full">
               <h1 className="serif-regular md:w-[90%] w-full text-green-950 md:text-[2.55rem] text-[1.9rem]">
                 Delivering Impactful
@@ -175,7 +199,7 @@ const Home = () => {
             </div>
 
             <div className="services-container md:w-[50%] w-full">
-              {services.map((item) => (
+              {services.slice(0, 6).map((item) => (
                 <div className="card-container mb-5 flex">
                   <div className="image-container h-[5rem] relative z-20 w-[5rem] rounded-[10px] bg-[#013220CC] flex items-center justify-center">
                     <TbPencilStar size={30} color="white" />
