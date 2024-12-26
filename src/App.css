@@ -31,3 +31,20 @@ body {
   height: 100%;
   object-fit: cover; /* Ensures images cover the container while maintaining aspect ratio */
 }
+
+.custom-select {
+  appearance: none; /* Remove default arrow */
+  -webkit-appearance: none; /* Safari and Chrome */
+  -moz-appearance: none; /* Firefox */
+  background-color: #136a4a2e;
+  border: none; /* Match your border color */
+  border-radius: 6px;
+  padding: 0 2rem 0 0.8rem;
+  height: 2.5rem;
+  width: 100%;
+  outline: none;
+  background-image: url("/icons/down.svg"); /* Path to custom icon */
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem; /* Size of custom icon */
+}

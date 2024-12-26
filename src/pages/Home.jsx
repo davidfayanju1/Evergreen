@@ -5,8 +5,10 @@ import "slick-carousel/slick/slick-theme.css";
 import { FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { TbPencilStar } from "react-icons/tb";
+import Marquee from "react-fast-marquee";
 
 import Slider from "react-slick";
+import FadeLayout from "../layout/FadeLayout";
 
 const Home = () => {
   const settings = {
@@ -25,7 +27,7 @@ const Home = () => {
       name: "/images/typewriter.jpg",
     },
     {
-      name: "/images/letter.jpg",
+      name: "/images/hand.jpg",
     },
     {
       name: "/images/newspaper.jpg",
@@ -50,39 +52,59 @@ const Home = () => {
     },
   ];
 
+  const testimonials = [
+    {
+      name: "Evergreen is worth every penny. One of the best writing brands I have collaborated with.",
+      img: "/images/woman.png",
+      author: "Tomi Oyebanji",
+    },
+    {
+      name: "Evergreen is worth every penny. One of the best writing brands I have collaborated with.",
+      img: "/images/woman.png",
+      author: "Tomi Oyebanji",
+    },
+    {
+      name: "Evergreen is worth every penny. One of the best writing brands I have collaborated with.",
+      img: "/images/woman.png",
+      author: "Tomi Oyebanji",
+    },
+  ];
+
   return (
     <DefaultLayout>
       <div className="page_container min-h-screen">
-        <section className="hero md:h-[32rem] h-[37rem] pt-[6.5rem] !bg-green-100/50 py-[2rem] md:gap-4 gap-8 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
-          <div className="text_container md:w-[50%] w-full">
-            <h1 className="serif-regular md:w-[90%] w-full text-green-950 md:text-[2.55rem] text-[1.9rem]">
-              Delivering Impactful
-              <span className="text-red-900"> Write Ups.</span>
-            </h1>
-            <h2 className="text-gray-500 md:text-[.9rem] text-[.8rem] md:w-[80%] w-full my-3">
-              Delivering writeups that resonate and inspire. We craft content
-              designed to leave a lasting impact and drive meaningful
-              engagement.
-            </h2>
-            <button className="bg-red-900 shadow-lg md:mt-6 mt-3 serif-regular text-white h-[2.5rem] w-[13rem] rounded-full">
-              Book
-            </button>
-          </div>
+        <FadeLayout delay={0.4}>
+          <section className="hero md:h-[32rem] h-[37rem] pt-[6.5rem] !bg-green-100/50 py-[2rem] md:gap-4 gap-8 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
+            <div className="text_container md:w-[50%] w-full">
+              <h1 className="serif-regular md:w-[90%] w-full text-green-950 md:text-[2.55rem] text-[1.9rem]">
+                Delivering Impactful
+                <span className="text-red-900"> Write Ups.</span>
+              </h1>
+              <h2 className="text-gray-500 md:text-[.9rem] text-[.8rem] md:w-[80%] w-full my-3">
+                Delivering writeups that resonate and inspire. We craft content
+                designed to leave a lasting impact and drive meaningful
+                engagement.
+              </h2>
+              <button className="bg-red-900 shadow-lg md:mt-6 mt-3 serif-regular text-white h-[2.5rem] w-[13rem] rounded-full">
+                Book
+              </button>
+            </div>
 
-          <div className="image_container md:w-[50%] w-full block rounded-[8px] h-[29rem]">
-            <Slider {...settings} className="">
-              {images.map((image, index) => (
-                <div className="image-container h-[29rem]">
-                  <img
-                    src={image.name}
-                    alt={image.alt}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-              ))}
-            </Slider>
-          </div>
-        </section>
+            <div className="image_container md:w-[50%] w-full block rounded-[8px] h-[29rem]">
+              <Slider {...settings} className="">
+                {images.map((image, index) => (
+                  <div className="image-container h-[29rem]">
+                    <img
+                      src={image.name}
+                      alt={image.alt}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                ))}
+              </Slider>
+            </div>
+          </section>
+        </FadeLayout>
 
         <div className="partners-section mt-[2rem]">
           <h1 className="text-center font-semibold md:text-[.9rem] text-[.7rem]">
@@ -90,7 +112,7 @@ const Home = () => {
             INDIVIDUALS AND PROFESSIONALS
           </h1>
         </div>
-        <section className="about md:px-[4rem] px-[1rem] bg-white py-[4rem] min-h-[30rem] w-full flex items-center justify-center md:flex-row-reverse flex-col md:gap-[3rem] gap-[4rem]">
+        <section className="about md:px-[4rem] px-[1rem]  py-[4rem] min-h-[30rem] w-full flex items-center justify-center md:flex-row-reverse flex-col md:gap-[3rem] gap-[4rem]">
           <div className="text_section md:w-[50%] w-full">
             <span className="title block serif-regular text-green-950 font-bold md:text-[2rem] text-[1.4rem]">
               About Us
@@ -133,7 +155,7 @@ const Home = () => {
             />
           </div>
         </section>
-        <section className="services_number min-h-[20rem] bg-red-50 md:px-[4rem] px-[1rem] py-[4rem]">
+        <section className="services_number min-h-[20rem] md:px-[4rem] px-[1rem] md:py-[4rem] py-[2rem]">
           <h2 className="serif-regular text-center md:text-[2rem] text-[1.4rem] text-green-950">
             Services We Offer
           </h2>
@@ -173,7 +195,7 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="testimonials min-h-[35rem] bg-white md:px-[4rem] px-[1rem] py-[4rem]">
+        <section className="testimonials min-h-[29rem] bg-white md:px-[4rem] px-[1rem] py-[2rem]">
           <h2 className="serif-regular text-center md:text-[2rem] text-[1.4rem] text-green-950 mb-[1rem]">
             Feedback
           </h2>
@@ -181,6 +203,37 @@ const Home = () => {
           <small className="block text-gray-500 text-center">
             Read what our clients have said about our brand
           </small>
+          <div className="card-container mt-[3rem]">
+            <Marquee
+              className="slider-statement cursor-default bg-carpet-green relative"
+              speed={50}
+              // onMouseEnter={() => setIsplaying(false)}
+              // onMouseLeave={() => setIsplaying(true)}
+              // play={isplaying}
+            >
+              {testimonials.map((item) => (
+                <div className="card-container ml-4 w-[20rem] bg-[#FFA6BD26] rounded-[9px] p-4">
+                  <div className="image-section flex justify-end">
+                    <img
+                      src={item.img}
+                      alt=""
+                      className="rounded-tl-[3.7rem] h-[5rem] w-[4rem] rounded-bl-[5.8rem]"
+                    />
+                  </div>
+
+                  <div className="text-section mt-4">
+                    <blockquote className="text-[.8rem] text-black block">
+                      {item.name}
+                    </blockquote>
+
+                    <small className="font-semibold text-green-950">
+                      {item.author}
+                    </small>
+                  </div>
+                </div>
+              ))}
+            </Marquee>
+          </div>
         </section>
 
         <section className="reach-out mb-8">
@@ -194,14 +247,14 @@ const Home = () => {
 
             <input
               type="text"
-              className=" w-full px-3 py-2 outline-none mb-[1rem] border-none rounded-[9px] placeholder:text-[14px] bg-green-100/30"
+              className=" w-full px-3 py-2 h-[2.7rem] text-[16px] outline-none mb-[1rem] border-none rounded-[9px] placeholder:text-[14px] bg-[#136a4a2e]"
               placeholder="Enter Email Address"
             />
 
             <select
               name=""
               id=""
-              className="outline-none w-full px-3 py-2 rounded-[9px] bg-green-100/30"
+              className="outline-none custom-select text-[.9rem] w-full px-3 py-2 rounded-[9px] bg-green-100/30"
             >
               {services.map((item) => (
                 <option value="" className="text-[1rem]">
