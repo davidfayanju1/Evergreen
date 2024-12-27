@@ -5,6 +5,7 @@ import { BsTwitterX } from "react-icons/bs";
 import { TiSocialFacebookCircular } from "react-icons/ti";
 import { PiLinkedinLogo } from "react-icons/pi";
 import { Link } from "react-router-dom";
+import { GiFeather } from "react-icons/gi";
 
 const Footer = () => {
   const links = [
@@ -49,8 +50,13 @@ const Footer = () => {
   return (
     <footer className="page-container min-h-[20rem] md:px-[4rem] px-[1rem] py-[3rem] w-full bg-[#0F5132]">
       <section className="flex items-center justify-between flex-wrap md:gap-3 gap-[3rem]">
-        <div className="title">
-          <img src="/icons/Logo.svg" alt="" />
+        <div className="title relative">
+          <GiFeather
+            color="#B71C1C"
+            size={29}
+            className="absolute top-[-1rem] left-[.5rem]"
+          />
+          <span className="block serif-regular text-white">Evergreen.</span>
         </div>
 
         <div className="links-container flex items-start gap-[3rem]">
