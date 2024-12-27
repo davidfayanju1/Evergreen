@@ -51,12 +51,11 @@ const Footer = () => {
     <footer className="page-container min-h-[20rem] md:px-[4rem] px-[1rem] py-[3rem] w-full bg-[#0F5132]">
       <section className="flex items-center justify-between flex-wrap md:gap-3 gap-[3rem]">
         <div className="title relative">
-          <GiFeather
-            color="#B71C1C"
-            size={29}
-            className="absolute top-[-1rem] left-[.5rem]"
+          <img
+            src="/icons/evergreen.svg"
+            alt=""
+            className="w-[10rem] h-[10rem]"
           />
-          <span className="block serif-regular text-white">Evergreen.</span>
         </div>
 
         <div className="links-container flex items-start gap-[3rem]">
