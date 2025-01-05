@@ -125,9 +125,42 @@ const Home = () => {
             INDIVIDUALS AND PROFESSIONALS
           </h1>
         </div>
+
+        <section className="company-logos flex items-center justify-center h-[10rem]">
+          <Marquee
+            className="slider-statement cursor-default bg-carpet-green relative"
+            speed={50}
+            // onMouseEnter={() => setIsplaying(false)}
+            // onMouseLeave={() => setIsplaying(true)}
+            // play={isplaying}
+            direction="right"
+          >
+            <img
+              src="/images/logos/BlackBallad.png"
+              alt=""
+              className="h-[5rem] ml-5"
+            />
+            <img
+              src="/images/logos/FSGHT.png"
+              alt=""
+              className="h-[5rem] ml-5"
+            />
+            <img
+              src="/images/logos/MYOPIA.jpg"
+              alt=""
+              className="h-[4rem] ml-5"
+            />
+            <img
+              src="/images/logos/peace.png"
+              alt=""
+              className="h-[5rem] ml-5"
+            />
+            <img src="/icons/eo.svg" alt="" className="h-[1.6rem] ml-5" />
+          </Marquee>
+        </section>
         <section
           id="About"
-          className="about md:px-[4rem] px-[1rem]  py-[4rem] min-h-[30rem] w-full flex items-center justify-center md:flex-row-reverse flex-col md:gap-[3rem] gap-[4rem]"
+          className="about md:px-[4rem] px-[1rem] pb-[4rem] pt-[2rem] min-h-[30rem] w-full flex items-center justify-center md:flex-row-reverse flex-col md:gap-[3rem] gap-[4rem]"
         >
           <div className="text_section md:w-[50%] w-full">
             <span className="title block serif-regular text-green-950 font-bold md:text-[2rem] text-[1.4rem]">
@@ -170,38 +203,6 @@ const Home = () => {
               className="rounded-[6px] h-full w-full object-cover"
             />
           </div>
-        </section>
-        <section className="company-logos flex items-center justify-center h-[10rem]">
-          <Marquee
-            className="slider-statement cursor-default bg-carpet-green relative"
-            speed={50}
-            // onMouseEnter={() => setIsplaying(false)}
-            // onMouseLeave={() => setIsplaying(true)}
-            // play={isplaying}
-            direction="right"
-          >
-            <img
-              src="/images/logos/BlackBallad.png"
-              alt=""
-              className="h-[5rem] ml-5"
-            />
-            <img
-              src="/images/logos/FSGHT.png"
-              alt=""
-              className="h-[5rem] ml-5"
-            />
-            <img
-              src="/images/logos/MYOPIA.jpg"
-              alt=""
-              className="h-[5rem] ml-5"
-            />
-            <img
-              src="/images/logos/peace.png"
-              alt=""
-              className="h-[5rem] ml-5"
-            />
-            <img src="/icons/eo.svg" alt="" className="h-[5rem] ml-5" />
-          </Marquee>
         </section>
 
         <section
