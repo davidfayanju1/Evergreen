@@ -6,29 +6,23 @@ import { TiSocialFacebookCircular } from "react-icons/ti";
 import { PiLinkedinLogo } from "react-icons/pi";
 import { Link } from "react-router-dom";
 import { GiFeather } from "react-icons/gi";
+import { FaLink } from "react-icons/fa";
 
 const Footer = () => {
   const links = [
     {
       name: "About",
-      url: "/About",
+      url: "About",
     },
-    {
-      name: "Pricing",
-      url: "/pricing",
-    },
+
     {
       name: "Services",
-      url: "/services",
+      url: "services",
     },
 
     {
       name: "Testimonials",
-      url: "/testimonials",
-    },
-    {
-      name: "Feedback",
-      url: "/feedback",
+      url: "testimonials",
     },
   ];
 
@@ -47,9 +41,16 @@ const Footer = () => {
     },
   ];
 
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <footer className="page-container min-h-[20rem] md:px-[4rem] px-[1rem] py-[3rem] w-full bg-[#0F5132]">
-      <section className="flex items-center justify-between flex-wrap md:gap-3 gap-[3rem]">
+      <section className="flex items-start justify-between flex-wrap md:gap-3 gap-[3rem]">
         <div className="title relative">
           <img
             src="/icons/evergreen.svg"
@@ -65,7 +66,10 @@ const Footer = () => {
             </h2>
 
             {links.map((item) => (
-              <button className="outline-none block mb-1 text-white text-[.8rem] border-none">
+              <button
+                onClick={() => scrollToSection(item.url)}
+                className="outline-none block mb-2 text-white text-[.8rem] border-none"
+              >
                 {item.name}
               </button>
             ))}
@@ -77,7 +81,7 @@ const Footer = () => {
             </h2>
 
             {secondLinks.map((item) => (
-              <button className="outline-none mb-1 block text-[.8rem] border-none text-white">
+              <button className="outline-none mb-2 block text-[.8rem] border-none text-white">
                 {item.name}
               </button>
             ))}
@@ -106,9 +110,15 @@ const Footer = () => {
           &copy; Copyright 2024
         </span>
         <div className="icons-container flex items-center justify-center gap-5">
-          <FaInstagram color="white" size={22} />
-          <BsTwitterX color="white" size={22} />
-          <TiSocialFacebookCircular color="white" size={22} />
+          <Link to={"https://www.instagram.com/mysteriebellax/"}>
+            <FaInstagram color="white" size={22} />
+          </Link>
+          <Link to={"https://twitter.com/harleythequin/ "}>
+            <BsTwitterX color="white" size={22} />
+          </Link>
+          <Link to={"https://linktr.ee/oluwaseunfamoofo"}>
+            <FaLink color="white" size={22} />
+          </Link>
 
           <Link to={"https://www.linkedin.com/in/oluwaseun-famoofo-324151178/"}>
             <PiLinkedinLogo color="white" size={22} />

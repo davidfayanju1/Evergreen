@@ -1,47 +1,85 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { useState } from "react";
 
 const Nav = () => {
   const links = [
     {
       name: "Home",
-      route: "/",
+      route: "Hero",
     },
 
     {
       name: "Contact",
-      route: "/contact",
+      route: "reach-out",
     },
 
     {
       name: "Testimonials",
-      route: "/testimonials",
+      route: "testimonials",
     },
   ];
 
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="nav-container z-50 bg-white backdrop-blur-lg fixed top-0 w-full h-[5rem] flex items-center justify-between md:px-[4rem] px-[1rem] shadow-md">
-      <div className="page_title">
-        <Link to={"/"} className="flex items-center gap-1">
-          <h1 className="serif-regular text-green-950 font-bold md:text-[1.3rem] text-[1.1rem]">
-            <img src="/icons/Logo.svg" alt="" />
-          </h1>
-        </Link>
+    <div
+      id="first"
+      className="nav-container z-50 bg-white backdrop-blur-lg fixed top-0 w-full h-[5rem] flex items-center justify-between md:px-[4rem] px-[1rem] shadow-md"
+    >
+      <div
+        onClick={() => scrollToSection("Hero")}
+        className="cursor-pointer md:ml-0 ml-[-2rem]"
+      >
+        <img
+          src="/images/evergreen1.png"
+          alt="company Logo"
+          className="h-[9rem]"
+        />
       </div>
       <nav className="destop-links">
-        <ul className="md:flex hidden items-center gap-3">
+        <ul className="md:flex hidden items-center gap-5">
           {links.map((item) => (
-            <Link to={item.route} className="text-[.9rem]">
+            <div
+              onClick={() => scrollToSection(item.route)}
+              className="text-[.9rem] cursor-pointer"
+            >
               {item.name}
-            </Link>
+            </div>
           ))}
         </ul>
 
-        <div className="burger_container md:hidden block">
+        <button
+          onClick={() => setOpen(!open)}
+          className="burger_container md:hidden block"
+        >
           <GiHamburgerMenu />
-        </div>
+        </button>
       </nav>
+
+      {open && (
+        <ul className="md:hidden fixed h-[10rem] p-[1rem] mobile-nav bg-white w-full top-[5rem] left-0">
+          {links.map((item) => (
+            <div
+              onClick={() => {
+                scrollToSection(item.route);
+                setOpen(false);
+              }}
+              className="text-[.9rem] mb-2 cursor-pointer"
+            >
+              {item.name}
+            </div>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

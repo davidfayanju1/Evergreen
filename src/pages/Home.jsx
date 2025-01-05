@@ -35,45 +35,18 @@ const Home = () => {
   ];
 
   const services = [
-    {
-      name: "Articles",
-    },
-    {
-      name: "Novels",
-    },
-    {
-      name: "Speeches",
-    },
-    {
-      name: "Curriculum Vitae",
-    },
-    {
-      name: "Journalist Pieces",
-    },
-
-    {
-      name: "Autobiographies/biographies",
-    },
-
-    {
-      name: "Novels",
-    },
-
-    {
-      name: "CVs",
-    },
-
-    {
-      name: "Cover letters",
-    },
-
-    {
-      name: "Personal Statements",
-    },
-
-    {
-      name: "Essays",
-    },
+    "Articles",
+    "Essays",
+    "Journalistic pieces",
+    "Love poems",
+    "Wedding vows",
+    "Proposals/pitches",
+    "Speeches",
+    "Autobiographies/biographies",
+    "Novels",
+    "CVs",
+    "Cover letters",
+    "Personal Statements",
   ];
 
   const testimonials = [
@@ -94,11 +67,21 @@ const Home = () => {
     },
   ];
 
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <DefaultLayout>
       <div className="page_container min-h-screen">
         <FadeLayout delay={0.4}>
-          <section className="hero md:h-[32rem] h-[37rem] pt-[6.5rem] !bg-green-200/50 py-[2rem] md:gap-4 gap-8 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full ">
+          <section
+            id="Hero"
+            className="hero md:h-[32rem] h-[37rem] pt-[6.5rem] !bg-green-200/50 py-[2rem] md:gap-4 gap-8 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full "
+          >
             <div className="text_container md:w-[50%] w-full">
               <h1 className="serif-regular md:w-[90%] w-full text-green-950 md:text-[2.55rem] text-[1.9rem]">
                 Delivering Impactful
@@ -109,7 +92,10 @@ const Home = () => {
                 designed to leave a lasting impact and drive meaningful
                 engagement.
               </h2>
-              <button className="bg-red-900 shadow-lg md:mt-6 mt-3 serif-regular text-white h-[2.5rem] w-[13rem] rounded-full">
+              <button
+                onClick={() => scrollToSection("reach-out")}
+                className="bg-red-900 shadow-lg md:mt-6 mt-3 serif-regular text-white h-[2.5rem] w-[13rem] rounded-full"
+              >
                 Book
               </button>
             </div>
@@ -136,7 +122,10 @@ const Home = () => {
             INDIVIDUALS AND PROFESSIONALS
           </h1>
         </div>
-        <section className="about md:px-[4rem] px-[1rem]  py-[4rem] min-h-[30rem] w-full flex items-center justify-center md:flex-row-reverse flex-col md:gap-[3rem] gap-[4rem]">
+        <section
+          id="About"
+          className="about md:px-[4rem] px-[1rem]  py-[4rem] min-h-[30rem] w-full flex items-center justify-center md:flex-row-reverse flex-col md:gap-[3rem] gap-[4rem]"
+        >
           <div className="text_section md:w-[50%] w-full">
             <span className="title block serif-regular text-green-950 font-bold md:text-[2rem] text-[1.4rem]">
               About Us
@@ -179,7 +168,43 @@ const Home = () => {
             />
           </div>
         </section>
-        <section className="services_number min-h-[20rem] md:px-[4rem] px-[1rem] md:py-[4rem] py-[2rem]">
+        <section className="company-logos flex items-center justify-center h-[10rem]">
+          <Marquee
+            className="slider-statement cursor-default bg-carpet-green relative"
+            speed={50}
+            // onMouseEnter={() => setIsplaying(false)}
+            // onMouseLeave={() => setIsplaying(true)}
+            // play={isplaying}
+            direction="right"
+          >
+            <img
+              src="/images/logos/BlackBallad.png"
+              alt=""
+              className="h-[5rem] ml-5"
+            />
+            <img
+              src="/images/logos/FSGHT.png"
+              alt=""
+              className="h-[5rem] ml-5"
+            />
+            <img
+              src="/images/logos/MYOPIA.jpg"
+              alt=""
+              className="h-[5rem] ml-5"
+            />
+            <img
+              src="/images/logos/peace.png"
+              alt=""
+              className="h-[5rem] ml-5"
+            />
+            <img src="/icons/eo.svg" alt="" className="h-[5rem] ml-5" />
+          </Marquee>
+        </section>
+
+        <section
+          id="services"
+          className="services_number min-h-[20rem] md:px-[4rem] px-[1rem] md:py-[4rem] py-[2rem]"
+        >
           <h2 className="serif-regular text-center md:text-[2rem] text-[1.4rem] text-green-950">
             Services We Offer
           </h2>
@@ -199,19 +224,22 @@ const Home = () => {
             </div>
 
             <div className="services-container md:w-[50%] w-full">
-              {services.slice(0, 6).map((item) => (
+              {services.slice(0, 5).map((item) => (
                 <div className="card-container mb-5 flex">
                   <div className="image-container h-[5rem] relative z-20 w-[5rem] rounded-[10px] bg-[#013220CC] flex items-center justify-center">
                     <TbPencilStar size={30} color="white" />
                   </div>
 
                   <div className="text-container ml-[-1rem] relative z-10 px-[2rem] rounded-tr-md rounded-br-md flex items-center py-1 md:w-[20rem] w-full bg-red-100/50 h-[5rem]">
-                    <span className="">{item.name}</span>
+                    <span className="">{item}</span>
                   </div>
                 </div>
               ))}
 
-              <div className="view-more flex items-center gap-3">
+              <div
+                onClick={() => scrollToSection("reach-out")}
+                className="view-more cursor-pointer flex items-center gap-3"
+              >
                 <span className="block">View More</span>
                 <img src="/icons/arrow.svg" alt="" />
               </div>
@@ -219,7 +247,10 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="testimonials min-h-[29rem] bg-white md:px-[4rem] px-[1rem] py-[2rem]">
+        <section
+          id="testimonials"
+          className="testimonials min-h-[29rem] bg-white md:px-[4rem] px-[1rem] py-[2rem]"
+        >
           <h2 className="serif-regular text-center md:text-[2rem] text-[1.4rem] text-green-950 mb-[1rem]">
             Feedback
           </h2>
@@ -260,7 +291,7 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="reach-out mb-8">
+        <section id="reach-out" className="reach-out mb-8">
           <div className="item-card w-[90%] bg-[#D9D9D9] md:px-[4rem] px-[1rem] py-[3rem] rounded-[9px] min-h-[20rem] mx-auto">
             <h2 className="serif-regular text-center md:text-[2rem] text-[1.4rem] text-green-950 mb-[.9rem]">
               We are here for you
@@ -282,7 +313,7 @@ const Home = () => {
             >
               {services.map((item) => (
                 <option value="" className="text-[1rem]">
-                  {item.name}
+                  {item}
                 </option>
               ))}
             </select>
