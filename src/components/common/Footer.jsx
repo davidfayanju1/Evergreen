@@ -26,7 +26,7 @@ const Footer = () => {
     },
     {
       name: "Contact",
-      url: "mailto:davidfayanju01@gmail.com",
+      url: "mailto:Oluwaseunfamoofo@gmail.com",
     },
   ];
 
