@@ -24,6 +24,10 @@ const Footer = () => {
       name: "Testimonials",
       url: "testimonials",
     },
+    {
+      name: "Contact",
+      url: "mailto:davidfayanju01@gmail.com",
+    },
   ];
 
   const secondLinks = [
@@ -34,10 +38,6 @@ const Footer = () => {
     {
       name: "Terms & Conditions",
       url: "/terms_conditions",
-    },
-    {
-      name: "Contact",
-      url: "/contact",
     },
   ];
 
@@ -70,7 +70,13 @@ const Footer = () => {
 
             {links.map((item) => (
               <button
-                onClick={() => scrollToSection(item.url)}
+                onClick={() => {
+                  if (item.name === "Contact") {
+                    window.location.href = item.url;
+                  } else {
+                    scrollToSection(item.url);
+                  }
+                }}
                 className="outline-none block mb-2 text-white text-[.8rem] border-none"
               >
                 {item.name}
@@ -78,17 +84,25 @@ const Footer = () => {
             ))}
           </div>
 
-          <div className="first-container">
+          {/* <div className="first-container">
             <h2 className="font-semibold text-[1rem] text-white mb-2">
               Legal Issues
             </h2>
 
             {secondLinks.map((item) => (
-              <button className="outline-none mb-2 block text-[.8rem] border-none text-white">
+              <button
+                key={item.url}
+                onClick={() => {
+                  if (item.name === "Contact") {
+                    window.location.href = item.url;
+                  }
+                }}
+                className="outline-none mb-2 block text-[.8rem] border-none text-white"
+              >
                 {item.name}
               </button>
             ))}
-          </div>
+          </div> */}
         </div>
 
         <div className="input-container">
@@ -98,7 +112,7 @@ const Footer = () => {
 
           <div className="form-container bg-white flex rounded-[9px] md:w-[20rem] w-full h-[3rem] items-center justify-start gap-3">
             <input
-              type="text"
+              type="email"
               className="bg-transparent outline-none border-none px-[1rem] w-[85%]"
               placeholder="Enter your email"
             />

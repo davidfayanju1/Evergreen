@@ -6,9 +6,11 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { TbPencilStar } from "react-icons/tb";
 import Marquee from "react-fast-marquee";
-
+import AOS from "aos";
 import Slider from "react-slick";
 import FadeLayout from "../layout/FadeLayout";
+import { useEffect } from "react";
+import { MdOutlineFormatQuote } from "react-icons/md";
 
 const Home = () => {
   const settings = {
@@ -49,21 +51,25 @@ const Home = () => {
     "Personal Statements",
   ];
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   const testimonials = [
     {
-      name: "Evergreen is worth every penny. One of the best writing brands I have collaborated with.",
+      name: "What a thoughtful message! We have definitely enjoyed showcasing your work.",
       img: "/images/woman.png",
-      author: "Tomi Oyebanji",
+      author: "The Adventures Editorial Team",
     },
     {
-      name: "Evergreen is worth every penny. One of the best writing brands I have collaborated with.",
+      name: "Thank you! This is great. I made copyedits but they don't change any meanings so I'll assume they are fine. Thanks again and we'd be happy to work with you again ",
       img: "/images/woman.png",
-      author: "Tomi Oyebanji",
+      author: "Sarah Prager",
     },
     {
-      name: "Evergreen is worth every penny. One of the best writing brands I have collaborated with.",
+      name: "It was such a pleasure working with you and publishing your hard work and thoughtful essay.",
       img: "/images/woman.png",
-      author: "Tomi Oyebanji",
+      author: "Brittany",
     },
   ];
 
@@ -82,6 +88,8 @@ const Home = () => {
       <div className="page_container min-h-screen">
         <FadeLayout delay={0.4}>
           <section
+            data-aos="fade-up"
+            data-aos-duration="700"
             id="Hero"
             className="hero md:h-[32rem] h-[37rem] pt-[6.5rem] !bg-green-200/50 py-[2rem] md:gap-4 gap-8 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full "
           >
@@ -271,17 +279,18 @@ const Home = () => {
               // play={isplaying}
             >
               {testimonials.map((item) => (
-                <div className="card-container ml-4 w-[20rem] bg-[#FFA6BD26] rounded-[9px] p-4">
+                <div className="card-container ml-4 w-[20rem] bg-[#FFA6BD26] rounded-[9px] min-h-[13rem] p-4">
                   <div className="image-section flex justify-end">
-                    <img
+                    <MdOutlineFormatQuote size={37} color="#14532D" />
+                    {/* <img
                       src={item.img}
                       alt=""
                       className="rounded-tl-[3.7rem] h-[5rem] w-[4rem] rounded-bl-[5.8rem]"
-                    />
+                    /> */}
                   </div>
 
                   <div className="text-section mt-4">
-                    <blockquote className="text-[.8rem] text-black block">
+                    <blockquote className="text-[.7rem] mb-3 font-light text-black block">
                       {item.name}
                     </blockquote>
 
