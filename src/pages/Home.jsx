@@ -175,22 +175,25 @@ const Home = () => {
               About Us
             </span>
 
-            <small className="desc block text-gray-500 mt-[1rem] md:w-[80%] w-full">
-              Evergreen is a one woman business that thrived when everything
-              I've tried failed. Evergreen is my blood sweat and tears when I
-              had nothing. Every poem stood for something so did every write up
-              so I said to give back to the community by also giving back to
-              myself LoL.
+            <small className="desc block text-gray-500 md:text-[1rem] text-[.8rem] mt-[1rem] md:w-[85%] w-full">
+              Oluwaseun Famoofo is a passionate narrator. A lover of comedy
+              shows and wine, you will mostly see her glued to her laptop
+              revealing one story or the other. Creating her novels and building
+              their characters gives her the utmost satisfaction. Her works have
+              shown in media such as Foresight, EuropaScience, Tape Collective,
+              Peace Insight, Black Ballad, Adventures from the bedroom of
+              African women, Yellow seeds magazine, Noisy streets magazine,
+              Resonate, Shado magazine, HypeQ Magazine, and Wordbrew.
             </small>
 
-            <div className="text-container mt-3">
+            {/* <div className="text-container mt-3">
               <small className="block text-green-950 text-[.7rem]">
                 - Famoofo Oluwaseun
               </small>
               <small className="block text-gray-500 font-semibold text-[.7rem]">
                 CEO, Evergreen
               </small>
-            </div>
+            </div> */}
           </div>
 
           <div className="image-container md:w-[50%] w-full relative rounded-[6px] overflow-hidden bg-gray-100 h-[20rem]">
