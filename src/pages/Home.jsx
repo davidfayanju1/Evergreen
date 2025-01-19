@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import DefaultLayout from "../layout/DefaultLayout";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -11,6 +11,9 @@ import Slider from "react-slick";
 import FadeLayout from "../layout/FadeLayout";
 import { useEffect } from "react";
 import { MdOutlineFormatQuote } from "react-icons/md";
+import emailjs from "emailjs-com";
+import { toast } from "react-toastify";
+import DotLoader from "react-spinners/DotLoader";
 
 const Home = () => {
   const settings = {
@@ -80,6 +83,39 @@ const Home = () => {
       const y =
         element.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
+  const [selectedService, setSelectedService] = useState("");
+  const [inputEmail, setInputEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const handleOrder = (e) => {
+    e.preventDefault();
+    if (selectedService === "" || inputEmail === "") {
+      toast.error("Input is Required");
+    } else {
+      setIsLoading(true);
+
+      const templateParams = { service: selectedService, sender: inputEmail };
+      emailjs
+        .send(
+          "service_v5c3l1m",
+          "template_e9e07xc",
+          templateParams,
+          "SRFgBDq1ChpVRPbKy"
+        )
+        .then(
+          (response) => {
+            console.log("SUCCESS!", response.status, response.text);
+            toast.success("Order placed and email sent!");
+            setIsLoading(false);
+          },
+          (error) => {
+            console.error("FAILED...", error);
+            toast.error("Error placing order");
+            setIsLoading(false);
+          }
+        );
     }
   };
 
@@ -317,25 +353,41 @@ const Home = () => {
             </small>
 
             <input
-              type="text"
+              type="email"
               className=" w-full px-3 py-2 h-[2.7rem] text-[16px] outline-none mb-[1rem] border-none rounded-[9px] placeholder:text-[14px] bg-[#136a4a2e]"
               placeholder="Enter Email Address"
+              onChange={(e) => setInputEmail(e.target.value)}
             />
 
             <select
               name=""
               id=""
               className="outline-none custom-select text-[.9rem] w-full px-3 py-2 rounded-[9px] bg-green-100/30"
+              onChange={(e) => setSelectedService(e.target.value)}
             >
               {services.map((item) => (
-                <option value="" className="text-[1rem]">
+                <option value={item} className="text-[1rem]">
                   {item}
                 </option>
               ))}
             </select>
 
-            <button className="bg-red-900 md:mt-6 mt-[2rem] serif-regular text-white h-[2.5rem] md:w-[13rem] w-full rounded-[9px]">
-              Send
+            <button
+              disabled={isLoading}
+              onClick={handleOrder}
+              className="bg-red-900 md:mt-6 mt-[2rem] serif-regular text-white h-[2.5rem] md:w-[13rem] w-full rounded-[9px]"
+            >
+              {isLoading && (
+                <DotLoader
+                  color={"white"}
+                  size={20}
+                  aria-label="Loading Spinner"
+                  data-testid="loader"
+                  className="mx-auto"
+                />
+              )}
+
+              {!isLoading && "Send"}
             </button>
           </div>
         </section>
