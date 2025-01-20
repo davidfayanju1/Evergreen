@@ -40,6 +40,7 @@ const Home = () => {
   ];
 
   const services = [
+    "",
     "Articles",
     "Essays",
     "Journalistic pieces",
@@ -108,12 +109,16 @@ const Home = () => {
           (response) => {
             console.log("SUCCESS!", response.status, response.text);
             toast.success("Order placed and email sent!");
+            setSelectedService("");
+            setInputEmail("");
             setIsLoading(false);
           },
           (error) => {
             console.error("FAILED...", error);
             toast.error("Error placing order");
             setIsLoading(false);
+            setSelectedService("");
+            setInputEmail("");
           }
         );
     }
@@ -356,13 +361,13 @@ const Home = () => {
                 <h2 className="serif-regular text-center md:text-[2rem] text-[1.4rem] text-green-950 mb-[.9rem]">
                   We are here for you
                 </h2>
-                <small className="block text-gray-500 text-center mb-[3rem]">
+                <small className="block text-gray-300 text-center mb-[3rem]">
                   Reach out to us for a compelling writeup
                 </small>
 
                 <input
                   type="email"
-                  className=" w-full px-3 py-2 h-[2.7rem] text-[16px] outline-none mb-[1rem] border-none rounded-[9px] placeholder:text-[14px] bg-[#136a4a2e]"
+                  className=" w-full px-3 py-2 h-[2.7rem] text-[16px] text-white outline-none mb-[1rem] border-none rounded-[9px] placeholder:text-[14px] bg-[#136a4a2e]"
                   placeholder="Enter Email Address"
                   onChange={(e) => setInputEmail(e.target.value)}
                 />
@@ -370,7 +375,7 @@ const Home = () => {
                 <select
                   name=""
                   id=""
-                  className="outline-none custom-select text-[.9rem] w-full px-3 py-2 rounded-[9px] bg-green-100/30"
+                  className="outline-none text-white custom-select text-[.9rem] w-full px-3 py-2 rounded-[9px] bg-green-100/30"
                   onChange={(e) => setSelectedService(e.target.value)}
                 >
                   {services.map((item) => (
