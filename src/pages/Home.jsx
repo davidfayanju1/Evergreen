@@ -343,52 +343,62 @@ const Home = () => {
           </div>
         </section>
 
-        <section id="reach-out" className="reach-out mb-8">
-          <div className="item-card w-[90%] bg-[#D9D9D9] md:px-[4rem] px-[1rem] py-[3rem] rounded-[9px] min-h-[20rem] mx-auto">
-            <h2 className="serif-regular text-center md:text-[2rem] text-[1.4rem] text-green-950 mb-[.9rem]">
-              We are here for you
-            </h2>
-            <small className="block text-gray-500 text-center mb-[3rem]">
-              Reach out to us for a compelling writeup
-            </small>
-
-            <input
-              type="email"
-              className=" w-full px-3 py-2 h-[2.7rem] text-[16px] outline-none mb-[1rem] border-none rounded-[9px] placeholder:text-[14px] bg-[#136a4a2e]"
-              placeholder="Enter Email Address"
-              onChange={(e) => setInputEmail(e.target.value)}
+        <section id="reach-out" className="reach-out">
+          <div className="image-container relative">
+            <div className="overlay absolute inset-0 bg-black/50"></div>
+            <img
+              src="/images/hero2.jpg"
+              alt=""
+              className="h-[30rem] w-full object-cover"
             />
+            <div className="item-card absolute top-[15%] left-0 flex items-center justify-center w-full">
+              <div className="item-card bg-[#D9D9D9] md:w-[70%] w-[85%] md:px-[4rem] px-[1rem] py-[2rem] rounded-[9px] min-h-[15rem]">
+                <h2 className="serif-regular text-center md:text-[2rem] text-[1.4rem] text-green-950 mb-[.9rem]">
+                  We are here for you
+                </h2>
+                <small className="block text-gray-500 text-center mb-[3rem]">
+                  Reach out to us for a compelling writeup
+                </small>
 
-            <select
-              name=""
-              id=""
-              className="outline-none custom-select text-[.9rem] w-full px-3 py-2 rounded-[9px] bg-green-100/30"
-              onChange={(e) => setSelectedService(e.target.value)}
-            >
-              {services.map((item) => (
-                <option value={item} className="text-[1rem]">
-                  {item}
-                </option>
-              ))}
-            </select>
-
-            <button
-              disabled={isLoading}
-              onClick={handleOrder}
-              className="bg-red-900 md:mt-6 mt-[2rem] serif-regular text-white h-[2.5rem] md:w-[13rem] w-full rounded-[9px]"
-            >
-              {isLoading && (
-                <DotLoader
-                  color={"white"}
-                  size={20}
-                  aria-label="Loading Spinner"
-                  data-testid="loader"
-                  className="mx-auto"
+                <input
+                  type="email"
+                  className=" w-full px-3 py-2 h-[2.7rem] text-[16px] outline-none mb-[1rem] border-none rounded-[9px] placeholder:text-[14px] bg-[#136a4a2e]"
+                  placeholder="Enter Email Address"
+                  onChange={(e) => setInputEmail(e.target.value)}
                 />
-              )}
 
-              {!isLoading && "Send"}
-            </button>
+                <select
+                  name=""
+                  id=""
+                  className="outline-none custom-select text-[.9rem] w-full px-3 py-2 rounded-[9px] bg-green-100/30"
+                  onChange={(e) => setSelectedService(e.target.value)}
+                >
+                  {services.map((item) => (
+                    <option value={item} className="text-[1rem]">
+                      {item}
+                    </option>
+                  ))}
+                </select>
+
+                <button
+                  disabled={isLoading}
+                  onClick={handleOrder}
+                  className="bg-red-900 md:mt-6 mt-[2rem] serif-regular text-white h-[2.5rem] md:w-[13rem] w-full rounded-[9px]"
+                >
+                  {isLoading && (
+                    <DotLoader
+                      color={"white"}
+                      size={20}
+                      aria-label="Loading Spinner"
+                      data-testid="loader"
+                      className="mx-auto"
+                    />
+                  )}
+
+                  {!isLoading && "Send"}
+                </button>
+              </div>
+            </div>
           </div>
         </section>
       </div>

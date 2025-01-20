@@ -54,7 +54,7 @@ const Footer = () => {
   return (
     <footer className="page-container min-h-[20rem] md:px-[4rem] px-[1rem] py-[3rem] w-full bg-[#0F5132]">
       <section className="flex items-start justify-between flex-wrap md:gap-3 gap-[3rem]">
-        <div className="title relative md:ml-0 ml-[-2.4rem]">
+        <div className="title relative md:ml-0 ml-[-2.4rem] mt-[-4rem] flex items-start justify-start">
           <img
             src="/icons/evergreen.svg"
             alt=""
