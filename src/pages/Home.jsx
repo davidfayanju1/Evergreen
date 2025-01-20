@@ -302,7 +302,7 @@ const Home = () => {
             </div>
 
             <div className="services-container md:w-[50%] w-full">
-              {services.slice(0, 5).map((item) => (
+              {services.slice(1, 5).map((item) => (
                 <div className="card-container mb-5 flex">
                   <div className="image-container h-[5rem] relative z-20 w-[5rem] rounded-[10px] bg-[#013220CC] flex items-center justify-center">
                     <TbPencilStar size={30} color="white" />
