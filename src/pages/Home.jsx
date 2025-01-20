@@ -14,6 +14,7 @@ import { MdOutlineFormatQuote } from "react-icons/md";
 import emailjs from "emailjs-com";
 import { toast } from "react-toastify";
 import DotLoader from "react-spinners/DotLoader";
+import { IoAlertCircleOutline } from "react-icons/io5";
 
 const Home = () => {
   const settings = {
@@ -121,6 +122,27 @@ const Home = () => {
             setInputEmail("");
           }
         );
+    }
+  };
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const [error, setError] = useState({
+    error: false,
+    errorDetails: "",
+  });
+  const handleInputChange = (value) => {
+    setInputEmail(value);
+
+    if (!emailRegex.test(value)) {
+      setError({
+        error: true,
+        errorDetails: "Invalid Email",
+      });
+    } else {
+      setError({
+        error: false,
+        errorDetails: "",
+      });
     }
   };
 
@@ -365,12 +387,26 @@ const Home = () => {
                   Reach out to us for a compelling writeup
                 </small>
 
-                <input
-                  type="email"
-                  className=" w-full px-3 py-2 h-[2.7rem] text-[16px] text-white outline-none mb-[1rem] border-none rounded-[9px] placeholder:text-[14px] bg-[#136a4a2e]"
-                  placeholder="Enter Email Address"
-                  onChange={(e) => setInputEmail(e.target.value)}
-                />
+                <div className="input-container mb-[1rem]">
+                  <input
+                    type="email"
+                    className={`w-full px-3 py-2 h-[2.7rem] text-[16px] text-white outline-none ${
+                      error.error
+                        ? "border-solid border-[1px] border-red-900"
+                        : "border-none"
+                    } rounded-[9px] placeholder:text-[14px] bg-[#136a4a2e]`}
+                    placeholder="Enter Email Address"
+                    onChange={(e) => handleInputChange(e.target.value)}
+                  />
+                  {error.error && (
+                    <div className="flex items-start gap-1 mt-1">
+                      <IoAlertCircleOutline size={13} color="red" />
+                      <small className="block text-[.6rem] text-red-500">
+                        {error.errorDetails}
+                      </small>
+                    </div>
+                  )}
+                </div>
 
                 <select
                   name=""
