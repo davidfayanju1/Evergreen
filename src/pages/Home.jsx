@@ -330,7 +330,7 @@ const Home = () => {
           className="testimonials min-h-[29rem] bg-white md:px-[4rem] px-[1rem] py-[2rem]"
         >
           <h2 className="serif-regular text-center md:text-[2rem] text-[1.4rem] text-green-950 mb-[1rem]">
-            Feedback
+            Testimonials
           </h2>
 
           <small className="block text-gray-500 text-center">
@@ -414,8 +414,11 @@ const Home = () => {
                   className="outline-none text-white custom-select text-[.9rem] w-full px-3 py-2 rounded-[9px] bg-green-100/30"
                   onChange={(e) => setSelectedService(e.target.value)}
                 >
+                  <option value="" disabled selected hidden>
+                    Select Order
+                  </option>
                   {services.map((item) => (
-                    <option value={item} className="text-[1rem]">
+                    <option key={item} value={item} className="text-[1rem]">
                       {item}
                     </option>
                   ))}

@@ -127,17 +127,32 @@ const Footer = () => {
           &copy; Copyright 2024
         </span>
         <div className="icons-container flex items-center justify-center gap-5">
-          <Link to={"https://www.instagram.com/mysteriebellax/"}>
+          <Link
+            to={"https://www.instagram.com/mysteriebellax/"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaInstagram color="white" size={22} />
           </Link>
-          <Link to={"https://twitter.com/harleythequin/ "}>
+          <Link
+            to={"https://twitter.com/harleythequin/"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <BsTwitterX color="white" size={22} />
           </Link>
-          <Link to={"https://linktr.ee/oluwaseunfamoofo"}>
+          <Link
+            to={"https://linktr.ee/oluwaseunfamoofo"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaLink color="white" size={22} />
           </Link>
-
-          <Link to={"https://www.linkedin.com/in/oluwaseun-famoofo-324151178/"}>
+          <Link
+            to={"https://www.linkedin.com/in/oluwaseun-famoofo-324151178/"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <PiLinkedinLogo color="white" size={22} />
           </Link>
         </div>
