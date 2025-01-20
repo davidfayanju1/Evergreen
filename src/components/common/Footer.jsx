@@ -110,13 +110,13 @@ const Footer = () => {
             Stay Connected
           </span>
 
-          <div className="form-container bg-white flex rounded-[9px] md:w-[20rem] w-full h-[3rem] items-center justify-start gap-3">
+          <div className="form-container bg-transparent border-solid border-[1px] border-white flex rounded-[9px] md:w-[20rem] w-full h-[3rem] items-center justify-start gap-3">
             <input
               type="email"
-              className="bg-transparent outline-none border-none px-[1rem] w-[85%]"
+              className="bg-transparent text-white outline-none border-none px-[1rem] w-[85%]"
               placeholder="Enter your email"
             />
-            <MdOutlineMailOutline />
+            <MdOutlineMailOutline color="white" size={20} />
           </div>
         </div>
       </section>

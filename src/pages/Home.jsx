@@ -352,7 +352,7 @@ const Home = () => {
               className="h-[30rem] w-full object-cover"
             />
             <div className="item-card absolute top-[15%] left-0 flex items-center justify-center w-full">
-              <div className="item-card bg-[#D9D9D9] md:w-[70%] w-[85%] md:px-[4rem] px-[1rem] py-[2rem] rounded-[9px] min-h-[15rem]">
+              <div className="item-card bg-[#D9D9D9]/50 backdrop-blur-xl md:w-[70%] w-[85%] md:px-[4rem] px-[1rem] py-[2rem] rounded-[9px] min-h-[15rem]">
                 <h2 className="serif-regular text-center md:text-[2rem] text-[1.4rem] text-green-950 mb-[.9rem]">
                   We are here for you
                 </h2>
