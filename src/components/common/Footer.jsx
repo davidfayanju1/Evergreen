@@ -54,7 +54,7 @@ const Footer = () => {
   return (
     <footer className="page-container min-h-[20rem] md:px-[4rem] px-[1rem] py-[3rem] w-full bg-[#0F5132]">
       <section className="flex items-start justify-between flex-wrap md:gap-3 gap-[3rem]">
-        <div className="title relative md:ml-0 ml-[-2.4rem] mt-[-4rem] flex items-start justify-start">
+        <div className="title relative md:ml-0 ml-[-2.4rem] mt-[-4.6rem] flex items-start justify-start">
           <img
             src="/icons/evergreen.svg"
             alt=""
@@ -105,10 +105,8 @@ const Footer = () => {
           </div> */}
         </div>
 
-        <div className="input-container">
-          <span className="block text-[.8rem] text-white mb-2">
-            Stay Connected
-          </span>
+        <div className="input-container mt-1">
+          <span className="block text-[.8rem] text-white">Stay Connected</span>
 
           <div className="form-container bg-transparent border-solid border-[1px] border-white flex rounded-[9px] md:w-[20rem] w-full h-[3rem] items-center justify-start gap-3">
             <input
