@@ -6,7 +6,6 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { TbPencilStar } from "react-icons/tb";
 import Marquee from "react-fast-marquee";
-import AOS from "aos";
 import Slider from "react-slick";
 import FadeLayout from "../layout/FadeLayout";
 import { useEffect } from "react";
@@ -15,6 +14,8 @@ import emailjs from "emailjs-com";
 import { toast } from "react-toastify";
 import DotLoader from "react-spinners/DotLoader";
 import { IoAlertCircleOutline } from "react-icons/io5";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Home = () => {
   const settings = {
@@ -41,7 +42,6 @@ const Home = () => {
   ];
 
   const services = [
-    "",
     "Articles",
     "Essays",
     "Journalistic pieces",
@@ -55,10 +55,6 @@ const Home = () => {
     "Cover letters",
     "Personal Statements",
   ];
-
-  useEffect(() => {
-    AOS.init();
-  }, []);
 
   const testimonials = [
     {
@@ -146,51 +142,57 @@ const Home = () => {
     }
   };
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+      mirror: false,
+    });
+  }, []);
+
   return (
     <DefaultLayout>
       <div className="page_container min-h-screen">
-        <FadeLayout delay={0.4}>
-          <section
-            data-aos="fade-up"
-            data-aos-duration="700"
-            id="Hero"
-            className="hero md:h-[32rem] h-[37rem] pt-[6.5rem] !bg-green-200/50 py-[2rem] md:gap-4 gap-8 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full "
-          >
-            <div className="text_container md:w-[50%] w-full">
-              <h1 className="serif-regular md:w-[90%] w-full text-green-950 md:text-[2.55rem] text-[1.9rem]">
-                Delivering Impactful
-                <span className="text-red-900"> Write Ups.</span>
-              </h1>
-              <h2 className="text-gray-500 md:text-[.9rem] text-[.8rem] md:w-[80%] w-full my-3">
-                Delivering writeups that resonate and inspire. We craft content
-                designed to leave a lasting impact and drive meaningful
-                engagement.
-              </h2>
-              <button
-                onClick={() => scrollToSection("reach-out")}
-                className="bg-red-900 shadow-lg md:mt-6 mt-3 serif-regular text-white h-[2.5rem] w-[13rem] rounded-full"
-              >
-                Book
-              </button>
-            </div>
+        <section
+          data-aos="fade-down"
+          id="Hero"
+          className="hero md:h-[32rem] h-[37rem] pt-[6.5rem] !bg-green-200/50 py-[2rem] md:gap-4 gap-8 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full "
+        >
+          <div className="text_container md:w-[50%] w-full">
+            <h1 className="serif-regular md:w-[90%] w-full text-green-950 md:text-[2.55rem] text-[1.9rem]">
+              Delivering Impactful
+              <span className="text-red-900"> Write Ups.</span>
+            </h1>
+            <h2 className="text-gray-500 md:text-[.9rem] text-[.8rem] md:w-[80%] w-full my-3">
+              Delivering writeups that resonate and inspire. We craft content
+              designed to leave a lasting impact and drive meaningful
+              engagement.
+            </h2>
+            <button
+              onClick={() => scrollToSection("reach-out")}
+              className="bg-red-900 shadow-lg md:mt-6 mt-3 serif-regular text-white h-[2.5rem] w-[13rem] rounded-full"
+            >
+              Book
+            </button>
+          </div>
 
-            <div className="image_container md:w-[50%] w-full block rounded-[8px] h-[29rem]">
-              <Slider {...settings} className="">
-                {images.map((image, index) => (
-                  <div className="image-container h-[29rem]">
-                    <img
-                      src={image.name}
-                      alt={image.alt}
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                ))}
-              </Slider>
-            </div>
-          </section>
-        </FadeLayout>
+          <div className="image_container md:w-[50%] w-full block rounded-[8px] h-[29rem]">
+            <Slider {...settings} className="">
+              {images.map((image, index) => (
+                <div className="image-container h-[29rem]">
+                  <img
+                    src={image.name}
+                    alt={image.alt}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </section>
 
-        <div className="partners-section mt-[2rem]">
+        <div data-aos="fade-down" className="partners-section mt-[2rem]">
           <h1 className="text-center font-semibold md:text-[.9rem] text-[.7rem]">
             TRUSTED BY <span className="text-red-900"> 50+ </span>
             INDIVIDUALS AND PROFESSIONALS
@@ -233,7 +235,7 @@ const Home = () => {
           id="About"
           className="about md:px-[4rem] px-[1rem] pb-[4rem] pt-[2rem] min-h-[30rem] w-full flex items-center justify-center md:flex-row-reverse flex-col md:gap-[3rem] gap-[4rem]"
         >
-          <div className="text_section md:w-[50%] w-full">
+          <div data-aos="fade-in" className="text_section md:w-[50%] w-full">
             <span className="title block serif-regular text-green-950 font-bold md:text-[2rem] text-[1.4rem]">
               About Us
             </span>
@@ -259,7 +261,10 @@ const Home = () => {
             </div> */}
           </div>
 
-          <div className="image-container md:w-[50%] w-full relative rounded-[6px] overflow-hidden bg-gray-100 h-[20rem]">
+          <div
+            data-aos="fade-right"
+            className="image-container md:w-[50%] w-full relative rounded-[6px] overflow-hidden bg-gray-100 h-[20rem]"
+          >
             <div className="absolute inset-0 h-full w-full bg-black/20 rounded[6px] flex items-center justify-center">
               <Link
                 to={"https://www.linkedin.com/in/oluwaseun-famoofo-324151178/"}
@@ -280,6 +285,7 @@ const Home = () => {
         </section>
 
         <section
+          data-aos="fade-in"
           id="services"
           className="services_number min-h-[20rem] md:px-[4rem] px-[1rem] md:py-[4rem] py-[2rem]"
         >
@@ -326,6 +332,7 @@ const Home = () => {
         </section>
 
         <section
+          data-aos="fade-out"
           id="testimonials"
           className="testimonials min-h-[29rem] bg-white md:px-[4rem] px-[1rem] py-[2rem]"
         >
@@ -370,7 +377,7 @@ const Home = () => {
           </div>
         </section>
 
-        <section id="reach-out" className="reach-out">
+        <section data-aos="fade-down" id="reach-out" className="reach-out">
           <div className="image-container relative">
             <div className="overlay absolute inset-0 bg-black/50"></div>
             <img
@@ -394,7 +401,7 @@ const Home = () => {
                       error.error
                         ? "border-solid border-[1px] border-red-900"
                         : "border-none"
-                    } rounded-[9px] placeholder:text-[14px] bg-[#136a4a2e]`}
+                    } rounded-[9px] placeholder:text-[14px] placeholder:text-gray-400 bg-[#136a4a2e]`}
                     placeholder="Enter Email Address"
                     onChange={(e) => handleInputChange(e.target.value)}
                   />
@@ -414,7 +421,13 @@ const Home = () => {
                   className="outline-none text-white custom-select text-[.9rem] w-full px-3 py-2 rounded-[9px] bg-green-100/30"
                   onChange={(e) => setSelectedService(e.target.value)}
                 >
-                  <option value="" disabled selected hidden>
+                  <option
+                    value=""
+                    disabled
+                    selected
+                    hidden
+                    style={{ color: "gray" }}
+                  >
                     Select Order
                   </option>
                   {services.map((item) => (
