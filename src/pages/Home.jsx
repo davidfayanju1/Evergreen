@@ -87,8 +87,12 @@ const Home = () => {
   const [selectedService, setSelectedService] = useState("");
   const [inputEmail, setInputEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
   const handleOrder = (e) => {
     e.preventDefault();
+    setSelectedService("");
+    setInputEmail("");
+
     if (selectedService === "" || inputEmail === "") {
       toast.error("Input is Required");
     } else {
@@ -104,14 +108,12 @@ const Home = () => {
         )
         .then(
           (response) => {
-            console.log("SUCCESS!", response.status, response.text);
             toast.success("Order placed and email sent!");
             setSelectedService("");
             setInputEmail("");
             setIsLoading(false);
           },
           (error) => {
-            console.error("FAILED...", error);
             toast.error("Error placing order");
             setIsLoading(false);
             setSelectedService("");
@@ -308,7 +310,7 @@ const Home = () => {
             </div>
 
             <div className="services-container md:w-[50%] w-full">
-              {services.slice(1, 5).map((item) => (
+              {services.slice(0, 5).map((item) => (
                 <div className="card-container mb-5 flex">
                   <div className="image-container h-[5rem] relative z-20 w-[5rem] rounded-[10px] bg-[#013220CC] flex items-center justify-center">
                     <TbPencilStar size={30} color="white" />
