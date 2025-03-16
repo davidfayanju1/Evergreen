@@ -36,7 +36,7 @@ const Nav = () => {
   return (
     <div
       id="first"
-      className="nav-container z-50 bg-white backdrop-blur-lg fixed top-0 w-full h-[5rem] flex items-center justify-between md:px-[4rem] px-[1rem] shadow-md"
+      className="nav-container z-50 bg-transparent backdrop-blur-sm fixed top-0 w-full h-[5rem] flex items-center justify-between md:px-[4rem] px-[1rem]"
     >
       <div
         onClick={() => scrollToSection("Hero")}

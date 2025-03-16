@@ -153,17 +153,34 @@ const Home = () => {
     });
   }, []);
 
+  const serviceSecond = [
+    {
+      name: "Authentic & Reliable",
+    },
+
+    {
+      name: "Innovative & Persuasive",
+    },
+    {
+      name: "Quality Services",
+    },
+
+    {
+      name: "Professional",
+    },
+  ];
+
   return (
     <DefaultLayout>
-      <div className="page_container min-h-screen">
+      <div className="page_container md:pt-0 pt-[9rem] min-h-screen">
         <section
           data-aos="fade-down"
           id="Hero"
-          className="hero md:h-[32rem] h-[37rem] pt-[6.5rem] !bg-green-200/50 py-[2rem] md:gap-4 gap-8 md:px-[4rem] px-[1rem] flex items-center justify-between md:flex-row flex-col w-full "
+          className="hero md:h-[32rem] h-[37rem] md:gap-4 gap-8 flex items-center justify-between md:flex-row flex-col w-full bg-white"
         >
-          <div className="text_container md:w-[50%] w-full">
+          <div className="text_container md:px-[5rem] px-[1.5rem] md:w-[50%] w-full">
             <h1 className="serif-regular md:w-[90%] w-full text-green-950 md:text-[2.55rem] text-[1.9rem]">
-              Delivering Impactful
+              Delivering Impactful{" "}
               <span className="text-red-900"> Write Ups.</span>
             </h1>
             <h2 className="text-gray-500 md:text-[.9rem] text-[.8rem] md:w-[80%] w-full my-3">
@@ -175,22 +192,27 @@ const Home = () => {
               onClick={() => scrollToSection("reach-out")}
               className="bg-red-900 shadow-lg md:mt-6 mt-3 serif-regular text-white h-[2.5rem] w-[13rem] rounded-full"
             >
-              Book
+              Order
             </button>
           </div>
-
-          <div className="image_container md:w-[50%] w-full block rounded-[8px] h-[29rem]">
-            <Slider {...settings} className="">
-              {images.map((image, index) => (
-                <div className="image-container h-[29rem]">
-                  <img
-                    src={image.name}
-                    alt={image.alt}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-              ))}
-            </Slider>
+          <div
+            className="image_container md:w-[50%] w-full block h-[29rem] relative"
+            style={{
+              backgroundImage:
+                "linear-gradient(90deg, #fff 50%, transparent 50%)",
+              backgroundSize: "100% 100%",
+              backgroundBlendMode: "multiply",
+              maskImage: "linear-gradient(to left, #fff, transparent)",
+              maskSize: "100% 100%",
+              maskPosition: "0 0",
+              maskRepeat: "no-repeat",
+            }}
+          >
+            <img
+              src="/images/letter.png"
+              alt="hero-image"
+              className="w-full h-full object-cover"
+            />
           </div>
         </section>
 
@@ -213,24 +235,28 @@ const Home = () => {
             <img
               src="/images/logos/BlackBallad.png"
               alt=""
-              className="h-[5rem] ml-5"
+              className="h-[5rem] lg:ml-[15rem] md:ml-[9rem] ml-[5rem]"
             />
             <img
               src="/images/logos/FSGHT.png"
               alt=""
-              className="h-[5rem] ml-5"
+              className="h-[5rem] lg:ml-[15rem] md:ml-[9rem] ml-[5rem]"
             />
             <img
               src="/images/logos/MYOPIA.jpg"
               alt=""
-              className="h-[4rem] ml-5"
+              className="h-[4rem] lg:ml-[15rem] md:ml-[9rem] ml-[5rem]"
             />
             <img
               src="/images/logos/peace.png"
               alt=""
-              className="h-[5rem] ml-5"
+              className="h-[5rem] lg:ml-[15rem] md:ml-[9rem] ml-[5rem]"
             />
-            <img src="/icons/eo.svg" alt="" className="h-[1.6rem] ml-5" />
+            <img
+              src="/icons/eo.svg"
+              alt=""
+              className="h-[1.6rem] lg:ml-[15rem] md:ml-[9rem] ml-[5rem]"
+            />
           </Marquee>
         </section>
         <section
@@ -242,25 +268,22 @@ const Home = () => {
               About Us
             </span>
 
-            <small className="desc block text-gray-500 md:text-[1rem] text-[.8rem] mt-[1rem] md:w-[85%] w-full">
-              Oluwaseun Famoofo is a passionate narrator. A lover of comedy
-              shows and wine, you will mostly see her glued to her laptop
-              revealing one story or the other. Creating her novels and building
-              their characters gives her the utmost satisfaction. Her works have
-              shown in media such as Foresight, EuropaScience, Tape Collective,
-              Peace Insight, Black Ballad, Adventures from the bedroom of
-              African women, Yellow seeds magazine, Noisy streets magazine,
-              Resonate, Shado magazine, HypeQ Magazine, and Wordbrew.
+            <small className="desc block text-justify text-gray-500 md:text-[1rem] text-[.8rem] mt-[1rem] md:w-[85%] w-full">
+              Evergreen is a one woman business that thrived when everything
+              I've tried failed. Evergreen is my blood sweat and tears when I
+              had nothing. Every poem stood for something so did every write up
+              so I said to give back to the community by also giving back to
+              myself LoL.
             </small>
 
-            {/* <div className="text-container mt-3">
+            <div className="text-container mt-3">
               <small className="block text-green-950 text-[.7rem]">
                 - Famoofo Oluwaseun
               </small>
               <small className="block text-gray-500 font-semibold text-[.7rem]">
                 CEO, Evergreen
               </small>
-            </div> */}
+            </div>
           </div>
 
           <div
@@ -279,10 +302,44 @@ const Home = () => {
               </Link>
             </div>
             <img
-              src="/images/phones.jpg"
+              src="/images/handling.png"
               alt=""
               className="rounded-[6px] h-full w-full object-cover"
             />
+          </div>
+        </section>
+
+        <section
+          data-aos="fade-in"
+          className="clients-us py-[5rem] bg-[#F4FFFB] md:px-[4rem] px-[1rem] flex md:items-start justify-center md:gap-[5rem] gap-[2rem] md:flex-row flex-col"
+        >
+          <div className="left-text md:w-[30%] ">
+            <small className="block text-[#797979]">WHY CHOOSE US</small>
+            <span className="block serif-regular md:w-[66%] w-full text-green-950 md:text-[1.8rem] text-[1.2rem]">
+              <span className="text-red-900"> Our clients love our </span>
+              Writeups
+            </span>
+          </div>
+          <div className="right-section md:w-[70%]">
+            <span className="block md:text-[1.1rem] text-[.9rem]">
+              Choosing the right brand matters, that is why we focus on deliver
+              exceptional writeup that amplify your voice and tell stories that
+              sticks.
+            </span>
+
+            <div className="icon-container flex items-center gap-2 flex-wrap md:w-[70%] mt-[2rem]">
+              {serviceSecond.map((item, index) => (
+                <div
+                  key={index}
+                  className="card-container flex items-center gap-2"
+                >
+                  <img src="/icons/redpen.svg" alt="" />
+                  <span className="block text-[.9rem] font-semibold text-[#800020]">
+                    {item.name}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
